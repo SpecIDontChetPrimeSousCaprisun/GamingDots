@@ -8,18 +8,18 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./users.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  #boot.loader.grub = {
-  #  enable = true;
-  #  device = "nodev";
-  #  efiSupport = true;
-  #};
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+  };
 
-  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernel.sysctl."vm.max_map_count" = 2147483642;
 
@@ -62,11 +62,6 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.chevre = {
-     isNormalUser = true;
-     extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [];
-  };
 
   # programs.firefox.enable = true;
 
@@ -89,7 +84,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
