@@ -9,17 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./users.nix
+      ./bootloader.nix
     ];
-
-  # Use the systemd-boot EFI boot loader.
-  #boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
-  };
-
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernel.sysctl."vm.max_map_count" = 2147483642;
 
