@@ -4,5 +4,6 @@
 	isNormalUser = true;
 	extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
 	packages = with pkgs; [];
+	shell = pkgs.zsh;
     };
 }
