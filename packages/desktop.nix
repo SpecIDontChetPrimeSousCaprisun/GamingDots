@@ -4,6 +4,7 @@
 	kitty
 	rofi
 	librewolf
+	pavucontrol
     ];
 
     programs.zsh.enable = true;
