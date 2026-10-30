@@ -1,11 +1,16 @@
 { pkgs, ... }:
 {
+    fonts.packages = with pkgs; [
+	nerd-fonts.jetbrains-mono
+    ];
+
     environment.systemPackages = with pkgs; [
 	kitty
 	rofi
 	librewolf
 	pavucontrol
 	vesktop
+	fastfetch
     ];
 
     programs.zsh.enable = true;
