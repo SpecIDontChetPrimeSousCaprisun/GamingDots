@@ -6,6 +6,7 @@
 
     xdg.configFile."hypr".source = ./modules/hypr;
     xdg.configFile."kitty".source = ./modules/kitty;
+    xdg.configFile."fastfetch".source = ./modules/fastfetch;
 
     home.file.".zshrc".source = ./modules/zshrc;
 }
