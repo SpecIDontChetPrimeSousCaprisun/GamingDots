@@ -5,6 +5,7 @@
 	rofi
 	librewolf
 	pavucontrol
+	vesktop
     ];
 
     programs.zsh.enable = true;

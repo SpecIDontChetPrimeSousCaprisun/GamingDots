@@ -1,0 +1,6 @@
+require("modules/keybinds")
+require("modules/monitors")
+require("modules/autostart")
+require("modules/env")
+require("modules/windows")
+require("modules/animations")
