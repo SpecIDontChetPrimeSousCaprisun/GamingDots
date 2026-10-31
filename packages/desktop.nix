@@ -11,6 +11,7 @@
 	pavucontrol
 	vesktop
 	fastfetch
+	awww
     ];
 
     programs.zsh.enable = true;
