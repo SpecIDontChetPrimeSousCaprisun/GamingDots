@@ -7,6 +7,8 @@
     xdg.configFile."hypr".source = ./modules/hypr;
     xdg.configFile."kitty".source = ./modules/kitty;
     xdg.configFile."fastfetch".source = ./modules/fastfetch;
+    xdg.configFile."tmux".source = ./modules/tmux;
+    xdg.configFile."nvim".source = ./modules/nvim;
 
     home.file.".zshrc".source = ./modules/zshrc;
 }
