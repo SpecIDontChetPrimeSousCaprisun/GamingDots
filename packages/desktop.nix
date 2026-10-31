@@ -12,6 +12,7 @@
 	vesktop
 	fastfetch
 	awww
+	quickshell
     ];
 
     programs.zsh.enable = true;
