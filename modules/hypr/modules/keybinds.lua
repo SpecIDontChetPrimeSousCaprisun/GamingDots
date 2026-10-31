@@ -1,6 +1,7 @@
 local terminal = "kitty"
 local fileManager = "dolphin"
 local menu = "rofi -show drun"
+local browser = "librewolf"
 local mainMod = "SUPER" 
 
 hl.config({
@@ -22,6 +23,7 @@ hl.config({
 })
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
