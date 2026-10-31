@@ -11,4 +11,5 @@
     xdg.configFile."nvim".source = ./modules/nvim;
 
     home.file.".zshrc".source = ./modules/zshrc;
+    home.file.".zprofile".source = ./modules/zprofile;
 }
