@@ -38,6 +38,7 @@ Variants {
 		anchors.rightMargin: 6
 		anchors.leftMargin: 6
 
+		Workspaces {}
 		Clock {}
 	    }
 	}
