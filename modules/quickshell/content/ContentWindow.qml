@@ -40,6 +40,7 @@ Variants {
 
 		Workspaces {}
 		Clock {}
+		Tray{}
 	    }
 	}
     }
