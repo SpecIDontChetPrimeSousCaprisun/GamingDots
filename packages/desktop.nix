@@ -13,6 +13,9 @@
 	fastfetch
 	awww
 	quickshell
+	grim
+	slurp
+	wl-clipboard
     ];
 
     programs.zsh.enable = true;
