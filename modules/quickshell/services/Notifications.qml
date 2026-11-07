@@ -11,12 +11,14 @@ Singleton {
     property var tracked: []
     property bool centerVisible: false
 
-    function sendNotification(summary, body, appName, urgency) {
+    function sendNotification(summary, body, appName, urgency, image, appIcon) {
 	const notif = {
 	    summary: summary,
 	    body: body,
 	    appName: appName,
 	    urgency: urgency,
+	    image: image,
+	    appIcon: appIcon,
 	    time: new Date()
 	}
 
@@ -28,8 +30,8 @@ Singleton {
 	target: "notifications"
 
 	function toggle(): void { centerVisible = ! centerVisible }
-	function sendNotification(summary, body, appName, urgency): void {
-	    sendNotification(summary, body, appName, urgency) 
+	function sendNotification(summary, body, appName, urgency, image, appIcon): void {
+	    sendNotification(summary, body, appName, urgency, image, appIcon) 
 	}
     }
 
@@ -39,9 +41,8 @@ Singleton {
 	bodySupported: true
 	imageSupported: true
 	onNotification: n => { 
-	    sendNotification(n.summary, n.body, n.appName, n.urgency)
+	    sendNotification(n.summary, n.body, n.appName, n.urgency, n.image, n.appIcon)
 	    n.tracked = true 
-	    //setTimeout(5000, () => {n.dismiss()})
 	}
     }
 }

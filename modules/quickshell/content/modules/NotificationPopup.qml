@@ -10,9 +10,22 @@ Widget {
     required property var modelData
     property bool decay: true
 
+    function close() {
+	Notifications.tracked.splice(Notifications.tracked.indexOf(modelData), 1)
+	root.visible = false
+    }
+
     id: root
     implicitWidth: 260
     implicitHeight: layout.implicitHeight + 10
+
+    MouseArea {
+	anchors.fill: parent
+
+	onClicked: {
+	    if (decay) close();
+	}
+    }
 
     ColumnLayout {
 	id: layout
@@ -22,14 +35,26 @@ Widget {
 	anchors.leftMargin: 5
 	anchors.rightMargin: 5
 
-	Text {
-	    text: modelData.summary
-	    color: Theme.accent
-	    font {
-		family: Theme.font
-		letterSpacing: -1
-		pixelSize: 25
-		weight: 600
+	RowLayout {
+	    Layout.fillWidth: true
+	    
+	    Image {
+		Layout.preferredHeight: 36
+		Layout.preferredWidth: 36
+		fillMode: Image.PreserveAspectFit
+		visible: source.toString() !== ""
+		source: modelData.image || modelData.appIcon || ""
+            }
+
+	    Text {
+		text: modelData.summary
+		color: Theme.accent
+		font {
+		    family: Theme.font
+		    letterSpacing: -1
+		    pixelSize: 25
+		    weight: 600
+		}
 	    }
 	}
 
@@ -46,8 +71,14 @@ Widget {
 	}
 
 	Text {
+	    Layout.fillWidth: true
+
 	    text: modelData.body
 	    color: Theme.accent
+	    elide: Text.ElideRight
+	    maximumLineCount: 100
+	    wrapMode: Text.WordWrap
+	    height: 1000000000000000
 	    font {
 		family: Theme.font
 		letterSpacing: -1
@@ -73,8 +104,7 @@ Widget {
 		    parent.width = root.implicitWidth - ((root.implicitWidth / 5000) * parent.count)
 
 		    if (parent.count > 5000) {
-			Notifications.tracked.splice(Notifications.tracked.indexOf(modelData), 1)
-			root.visible = false
+			close()
 		    }
 		}
 	    }
