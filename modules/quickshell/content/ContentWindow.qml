@@ -28,8 +28,10 @@ Variants {
 
 	    x: (parent.width / 2) - (width / 2)
 	    anchors.bottom: parent.bottom
-	    height: parent.height - 6
-	    width: layout.implicitWidth + 16
+	    implicitHeight: parent.height - 6
+	    implicitWidth: layout.implicitWidth + 16
+	    effectSpeed: 750
+	    effectSize: 5
 
 	    RowLayout {
 		id: layout
