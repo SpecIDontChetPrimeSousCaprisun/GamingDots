@@ -3,6 +3,7 @@ import Quickshell.Wayland
 import QtQuick
 import qs.components
 import qs.services
+import qs.content.dashboardModules
 
 StyledWindow {
     id: root
@@ -12,13 +13,17 @@ StyledWindow {
     anchors.left: true
     anchors.right: true
     visible: Dashboard.dashboardVisible
+    name: "dashboard"
 
-    WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.exclusionMode: ExclusionMode.Ignore
+    WlrLayershell.layer: WlrLayer.Overlay
+    WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
 
     Widget {
 	anchors.centerIn: parent
 	width: 700
 	height: 1000
+
+	Drun {}
     }
 }

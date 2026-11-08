@@ -7,6 +7,8 @@ Rectangle {
     property int effectSize: 8
     property int effectSpeed: 300
     property int maxEffectsPerColumn: 5
+    property color interiorColor: Theme.background
+    property bool effectEnabled: true
 
     id: root
     clip: true
@@ -25,11 +27,11 @@ Rectangle {
     Rectangle {
         anchors.fill: parent
         anchors.margins: 2
-        color: Theme.background
+        color: root.interiorColor
 
         RowLayout {
             Repeater {
-                model: Math.floor(root.width / root.effectSize)
+		model: root.effectEnabled ? Math.floor(root.width / root.effectSize) : 0
                 delegate: ColumnLayout {
                     id: column
 

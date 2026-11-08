@@ -7,6 +7,7 @@ Singleton {
     property color accent: "#630199"
     property color accent2: "#8005c1"
     property color background: "#06000a"
+    property color background2: "#392249"
     property string font: "Jetbrains Mono Nerd"
     property var accentGradient: Gradient {
 	orientation: Gradient.Vertical

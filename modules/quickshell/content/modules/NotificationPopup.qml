@@ -18,6 +18,7 @@ Widget {
     id: root
     implicitWidth: 260
     implicitHeight: layout.implicitHeight + 10
+    effectEnabled: false
 
     MouseArea {
 	anchors.fill: parent

@@ -1,6 +1,6 @@
 local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "rofi -show drun"
+local menu = "qs ipc call Dashboard showDrun"
 local browser = "librewolf"
 local mainMod = "SUPER" 
 
