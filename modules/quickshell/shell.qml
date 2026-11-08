@@ -9,4 +9,5 @@ ShellRoot {
     ContentWindow {}
     NC {}
     ReloadPopup {}
+    Dashboard {}
 }

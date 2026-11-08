@@ -17,7 +17,7 @@ Scope {
 	    Quickshell.inhibitReloadPopup();
 
 	    Notifications.sendNotification(
-		"Reaload completed !",
+		"Reload completed !",
 		"Shell config reload successfull !",
 		"Quickshell",
 		NotificationUrgency.Normal,
@@ -29,7 +29,7 @@ Scope {
 	function onReloadFailed(error: string) {
 	    Quickshell.inhibitReloadPopup();
 	    Notifications.sendNotification(
-		"Reaload failed :(",
+		"Reload failed :(",
 		"Shell config reload error: " + error,
 		"Quickshell",
 		NotificationUrgency.Critical,
