@@ -6,7 +6,6 @@
 
     environment.systemPackages = with pkgs; [
 	kitty
-	rofi
 	librewolf
 	pavucontrol
 	vesktop

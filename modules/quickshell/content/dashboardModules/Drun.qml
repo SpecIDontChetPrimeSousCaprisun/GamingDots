@@ -24,7 +24,7 @@ ColumnLayout {
 	    id: searchBar
 
 	    anchors.fill: parent
-	    color: Theme.accent
+	    color: Theme.background
 	    focus: true
 
 	    Keys.onReturnPressed: {
@@ -74,7 +74,7 @@ ColumnLayout {
 	    }
 
 	    effectEnabled: false
-	    interiorColor: ListView.isCurrentItem ? Theme.background2 : Theme.background
+	    interiorColor: ListView.isCurrentItem || hovered ? Theme.background2 : Theme.background
 	    implicitWidth: parent.width
 	    implicitHeight: appLayout.implicitHeight
 

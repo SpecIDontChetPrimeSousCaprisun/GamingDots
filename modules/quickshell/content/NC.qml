@@ -34,7 +34,8 @@ StyledWindow {
 	Widget {
 	    Layout.fillHeight: true
 	    implicitWidth: Notifications.centerVisible ? 500 : 0
-	    effectSize: 12
+	    effectSize: 15
+	    maxEffectsPerColumn: 2
 
 	    ColumnLayout {
 		anchors.fill: parent

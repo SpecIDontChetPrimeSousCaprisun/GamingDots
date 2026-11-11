@@ -88,26 +88,25 @@ Widget {
 	    }
 	}
 
-	Rectangle {
-	    property int count: 0
-
-	    visible: decaying
+    Rectangle {
+	    id: bar
 	    height: 5
-	    width: parent.implicitWidth
+	    width: parent ? parent.implicitWidth * progress : 0
 	    color: Theme.accent2
+	    visible: decay && root.visible
 
-	    Timer {
-		running: (modelData.urgency !== NotificationUrgency.Critical) && decay
-		repeat: true
-		interval: 1
-		onTriggered: {
-		    parent.count += 1
-		    parent.width = root.implicitWidth - ((root.implicitWidth / 5000) * parent.count)
+	    property real progress: 1.0
+	    property int durationMs: 5000
 
-		    if (parent.count > 5000) {
-			close()
-		    }
-		}
+	    NumberAnimation on progress {
+		id: decayAnim
+		running: decay && root.visible &&
+			 modelData.urgency !== NotificationUrgency.Critical
+		from: 1.0
+		to: 0.0
+		duration: bar.durationMs
+		easing.type: Easing.Linear
+		onFinished: root.close()
 	    }
 	}
     }

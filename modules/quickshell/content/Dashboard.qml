@@ -23,6 +23,8 @@ StyledWindow {
 	anchors.centerIn: parent
 	width: 700
 	height: 1000
+	effectSize: 15
+	maxEffectsPerColumn: 2
 
 	Drun {}
     }
