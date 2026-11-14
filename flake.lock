@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "drift": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794059007,
+        "narHash": "sha256-qQ4mf6ZAXWEo4GkJ+Cqd0czLZxiPsRD/djJrNoh4zx0=",
+        "owner": "socatlolmeow",
+        "repo": "drift",
+        "rev": "07245d412433427c090e8ab780960fc6a859c893",
+        "type": "github"
+      },
+      "original": {
+        "owner": "socatlolmeow",
+        "repo": "drift",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +59,7 @@
     },
     "root": {
       "inputs": {
+        "drift": "drift",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

@@ -40,6 +40,7 @@ Variants {
 		anchors.rightMargin: 6
 		anchors.leftMargin: 6
 
+		Power {}
 		Workspaces {}
 		Clock {}
 		Tray {}

@@ -6,9 +6,16 @@
 	    url = "github:nix-community/home-manager/master";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
+
+	drift = {
+	    url = "github:socatlolmeow/drift";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    inputs.self.submodules = true;
+
+    outputs = { self, nixpkgs, home-manager, drift, ... }@inputs: {
 	nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
 	    specialArgs = { inherit inputs; };
 	    modules = [

@@ -6,6 +6,7 @@ import qs.content
 import qs.components
 
 ShellRoot {
+    PowerOptions {}
     ContentWindow {}
     NC {}
     ReloadPopup {}

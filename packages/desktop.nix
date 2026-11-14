@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
     fonts.packages = with pkgs; [
 	nerd-fonts.jetbrains-mono
@@ -15,6 +15,7 @@
 	grim
 	slurp
 	wl-clipboard
+	inputs.drift.packages.${pkgs.system}.default
     ];
 
     programs.zsh.enable = true;
