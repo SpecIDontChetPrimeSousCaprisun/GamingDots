@@ -37,7 +37,7 @@ Widget {
 
 	anchors.fill: parent
 	color: Theme.accent
-	//echoMode: TextInput.Password
+	echoMode: TextInput.Password
 	focus: true
 	horizontalAlignment: TextInput.AlignHCenter
 	verticalAlignment: TextInput.AlignVCenter

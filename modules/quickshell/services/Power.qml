@@ -18,7 +18,7 @@ Singleton {
 	},
 	{
 	    name: "Lock",
-	    icon: "⏻",
+	    icon: "",
 	    command: [ "qs", "ipc", "call", "lock", "lock" ]
 	}
     ]
