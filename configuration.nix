@@ -10,6 +10,7 @@
 	    ./locales.nix
 	    ./audio.nix
 	    ./packages.nix
+	    ./pam.nix
 	];
 
     services.openssh.enable = true;

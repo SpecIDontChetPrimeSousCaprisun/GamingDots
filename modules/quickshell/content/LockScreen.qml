@@ -19,8 +19,8 @@ Item {
 	    Item {
 		id: blurLayer
 		anchors.fill: parent
-		visible: true            // don't draw the raw version
-		layer.enabled: true       // force it into a texture
+		visible: true            
+		layer.enabled: true       
 		layer.live: true
 		layer.smooth: true
 		layer.textureSize: Qt.size(width, height)
@@ -48,16 +48,7 @@ Item {
 		blurMax: 64
 	    }
 
-	    Text {
-		text: "unlock"
-		width: 100
-		height: 100
-		font.pixelSize: 10
-		MouseArea {
-		    anchors.fill: parent
-		    onClicked: lock.locked = false
-		}
-	    }
+	    Auth {}
 	}
     }
 
