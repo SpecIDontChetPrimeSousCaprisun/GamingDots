@@ -9,5 +9,4 @@ Image {
     source: "file://" + Lock.lockScreenshots[screen.name]
     fillMode: Image.PreserveAspectCrop
     cache: false
-    visible: false
 }

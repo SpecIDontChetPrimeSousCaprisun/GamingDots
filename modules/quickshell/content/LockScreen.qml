@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Effects
 import qs.content.lockScreenModules
 import qs.services
+import qs.components
 
 Item {
     id: root
@@ -15,16 +16,33 @@ Item {
 	WlSessionLockSurface {
 	    id: surface
 
-	    Bg {
+	    Item {
+		id: blurLayer
 		anchors.fill: parent
-		screen: surface.screen
-		id: bgImage
+		visible: true            // don't draw the raw version
+		layer.enabled: true       // force it into a texture
+		layer.live: true
+		layer.smooth: true
+		layer.textureSize: Qt.size(width, height)
+		z: -1
 
+		Bg {
+		    anchors.fill: parent
+		    screen: surface.screen
+		    id: bgImage
+
+		}
+
+		MatrixEffect {
+		    effectSize: 100
+		    maxEffectsPerColumn: 2
+		    cullIfNotVisible: false
+		}
 	    }
 
 	    MultiEffect {
-		anchors.fill: bgImage
-		source: bgImage
+		anchors.fill: parent
+		source: blurLayer
 		blurEnabled: true
 		blur: 1.0
 		blurMax: 64

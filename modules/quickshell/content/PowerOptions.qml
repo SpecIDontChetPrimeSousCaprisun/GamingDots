@@ -77,7 +77,11 @@ StyledWindow {
 		    MouseArea {
 			anchors.fill: parent
 			hoverEnabled: true
-			onClicked: proc.running = true
+			onClicked: { 
+			    Power.menuVisible = false
+			    proc.running = true
+			}
+
 			onEntered: widget.hovered = true
 			onExited: widget.hovered = false 
 		    }
